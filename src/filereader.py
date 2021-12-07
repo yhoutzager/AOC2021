@@ -1,6 +1,9 @@
 def open_file(name):
 	return open("../input/" + name + ".txt", "r")
 
+def read(name):
+	return open_file(name).read()
+
 def read_lines(name):
 	return open_file(name).read().splitlines()
 
