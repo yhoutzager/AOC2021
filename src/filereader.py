@@ -69,13 +69,24 @@ class Grid:
 		self.width = width
 
 	def __getitem__(self, point: typing.Tuple[int, int]):
-		return self.points
+		return self.points[point]
 
 	def __setitem__(self, point: typing.Tuple[int, int], value):
 		self.points[point] = value
 
 	def __len__(self):
 		return len(self.points)
+
+	def keys(self):
+		return self.points.keys()
+
+	def str(self):
+		stringhah = ""
+		for x in range(self.width):
+			for y in range(self.height):
+				stringhah += str(self.points[x, y])
+			stringhah += '\n'
+		return stringhah
 
 	def items(self):
 		for point, value in self.points.items():
